@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Add New Attraction</title>
 </head>
 <body>
-$END$
+<h2>Add New Attraction</h2>
+<form action="#" th:action="@{/attractions/save}" th:object="${attraction}" method="post">
+  <label>Name: <input type="text" th:field="*{name}" required/></label><br>
+  <label>Description: <input type="text" th:field="*{description}" required/></label><br>
+  <button type="submit">Add Attraction</button>
+</form>
 </body>
 </html>

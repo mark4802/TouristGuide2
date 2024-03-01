@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Landing Page</title>
+    <link rel="stylesheet" th:href="@{stylesheet.css}">
 </head>
 <body>
-$END$
+<tr th:each="touristAttraction : ${touristAttractionList}">
+  <td th:text="${touristAttraction.getName()}">Attraction Names: </td>
+</tr>
+<a href="/attractions/add">
+    <button>Add attraction</button>
+</a>
 </body>
 </html>
