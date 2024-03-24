@@ -2,15 +2,38 @@
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Landing Page</title>
-    <link rel="stylesheet" th:href="@{stylesheet.css}">
+    <title>Tourist Attractions</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
-<tr th:each="touristAttraction : ${touristAttractionList}">
-  <td th:text="${touristAttraction.getName()}">Attraction Names: </td>
-</tr>
-<a href="/attractions/add">
-    <button>Add attraction</button>
-</a>
+<h2>Tourist Attractions</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="attraction : ${touristAttractionList}">
+        <td th:text="${attraction.id}"></td>
+        <td th:text="${attraction.name}"></td>
+        <td th:text="${attraction.description}"></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/attractions/add">Add New Attraction</a>
 </body>
 </html>

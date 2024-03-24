@@ -9,22 +9,21 @@ import java.util.List;
 @Service
 public class TouristService {
 
-    private TouristRepository repository;
+    private final TouristRepository repository;
 
-    public TouristService() {
-        repository = new TouristRepository();
+    public TouristService(TouristRepository repository) {
+        this.repository = repository;
     }
 
-    public List<TouristAttraction> getTouristAttractions()  {
+    public List<TouristAttraction> getTouristAttractions() {
         return repository.getTouristAttractionList();
     }
 
-    public TouristAttraction getTouristAttraction(int id)  {
+    public TouristAttraction getTouristAttraction(int id) {
         return repository.getTouristAttraction(id);
     }
 
     public void addTouristAttraction(TouristAttraction attraction) {
         repository.addTouristAttraction(attraction);
     }
-
 }

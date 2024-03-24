@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("attractions")
 public class TouristController {
 
-    TouristService touristService;
-    TouristRepository touristRepository;
+    private final TouristService touristService;
+
     public TouristController(TouristService touristService) {
         this.touristService = touristService;
     }
@@ -34,6 +34,6 @@ public class TouristController {
     @PostMapping("/save")
     public String saveAttraction(@ModelAttribute("attraction") TouristAttraction attraction) {
         touristService.addTouristAttraction(attraction);
-        return "redirect:/attractions";
+        return "redirect:/attractions"; // Redirect to landing page after saving
     }
 }

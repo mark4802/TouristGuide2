@@ -1,6 +1,7 @@
 package com.example.touristguide.repository;
 
 import com.example.touristguide.model.TouristAttraction;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -26,4 +27,6 @@ public class TouristRepository {
     public void addTouristAttraction(TouristAttraction attraction) {
         touristAttractionList.add(attraction);
     }
+
+    
 }
